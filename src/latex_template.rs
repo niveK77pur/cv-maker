@@ -1,5 +1,6 @@
 use crate::askama_escaper;
 use askama::Template;
+use getset::Getters;
 
 #[derive(Template)]
 #[template(path = "latex/autumn_leaves/section.tex", syntax = "tex")]
@@ -44,4 +45,22 @@ impl Tools {
     pub fn break_at(&self, entry: &usize) -> bool {
         return self.break_points.contains(&entry);
     }
+}
+
+#[derive(Template)]
+#[template(path = "latex/autumn_leaves/works.tex", syntax = "tex")]
+pub struct Works {
+    pub works: Vec<Work>,
+}
+
+#[derive(Template, Getters)]
+#[template(path = "latex/autumn_leaves/work.tex", syntax = "tex")]
+#[getset(get)]
+pub struct Work {
+    pub title: String,
+    pub about: Option<String>,
+    pub location: String,
+    pub tools: Option<String>,
+    pub from: String,
+    pub to: String,
 }

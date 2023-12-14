@@ -83,4 +83,47 @@ async fn main() {
         .render()
         .unwrap_or("BORKED".into())
     );
+
+    info!("Works");
+    println!(
+        "{}",
+        latex_template::Works {
+            works: vec![
+                latex_template::Work {
+                    title: "My first job".into(),
+                    about: Some("I was tasked with doing my work".into()),
+                    location: "Office".into(),
+                    tools: Some("This, That, Other".into()),
+                    from: "Q1 2021".into(),
+                    to: "Q3 2022".into(),
+                },
+                latex_template::Work {
+                    title: "My second job".into(),
+                    about: None,
+                    location: "Office".into(),
+                    tools: Some("This, That, Other".into()),
+                    from: "Q2 2022".into(),
+                    to: "Q3 2023".into(),
+                },
+                latex_template::Work {
+                    title: "My third job".into(),
+                    about: Some("I was tasked with doing my work".into()),
+                    location: "Office".into(),
+                    tools: None,
+                    from: "Q1 2021".into(),
+                    to: "Q1 2021".into(),
+                },
+                latex_template::Work {
+                    title: "My fourth job".into(),
+                    about: None,
+                    location: "Office".into(),
+                    tools: None,
+                    from: "Q3 2024".into(),
+                    to: "Q4 2024".into(),
+                },
+            ]
+        }
+        .render()
+        .unwrap_or("BORKED".into())
+    );
 }

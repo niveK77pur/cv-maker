@@ -1,0 +1,19 @@
+% local about = string.format([[\newline %s \newline]], entry.about)
+% if type(entry.about) == "table" then
+%     about = joinTableItemize(entry.about)
+% end
+<<& for entry in works -&>>
+
+<<& let title = entry.title() -&>>
+<<& let about = entry.about() -&>>
+<<& let location = entry.location() -&>>
+<<& let tools = entry.tools() -&>>
+<<& let from = entry.from() -&>>
+<<& let to = entry.to() -&>>
+
+<<& include "latex/autumn_leaves/work.tex" &>>
+
+<<&- endfor &>>
+<<#
+vim: tw=0 cole=0
+#>>
