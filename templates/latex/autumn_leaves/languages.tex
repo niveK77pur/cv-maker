@@ -1,0 +1,20 @@
+\begin{cvtblr}{colspec = *{<<< columns * 2 >>>}{Q[l,m]}, column{even}={rightsep=<<< colsep >>>}}
+  <<&- for entry in languages -&>>
+
+  <<< entry.language >>> & \tikz[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]{
+    \foreach \n in {1,..., <<< entry.max_level_int() >>> }
+    \draw[header] (0.7*\n,0) circle (1ex);
+    \foreach \n in {1,..., <<< entry.current_level_int() >>> }
+    \filldraw[header] (0.7*\n,0) circle (1ex);
+  }
+  <<& if loop.index % columns == 0 -&>>
+    \\
+  <<& else -&>>
+    &
+  <<& endif -&>>
+
+  <<&- endfor -&>>
+\end{cvtblr}
+<<#
+vim: tw=0 cole=0
+#>>

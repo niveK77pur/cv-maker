@@ -64,3 +64,42 @@ pub struct Work {
     pub from: String,
     pub to: String,
 }
+
+#[derive(Template)]
+#[template(path = "latex/autumn_leaves/languages.tex", syntax = "tex")]
+pub struct Languages {
+    pub columns: usize,
+    pub colsep: f64,
+    pub languages: Vec<Language>,
+}
+
+pub struct Language {
+    pub language: String,
+    pub cefr_level: CEFR,
+    pub mothertongue: bool,
+}
+
+pub enum CEFR {
+    A1,
+    A2,
+    B1,
+    B2,
+    C1,
+    C2,
+}
+
+impl Language {
+    pub fn max_level_int(&self) -> usize {
+        6
+    }
+    pub fn current_level_int(&self) -> usize {
+        match &self.cefr_level {
+            CEFR::A1 => 1,
+            CEFR::A2 => 2,
+            CEFR::B1 => 3,
+            CEFR::B2 => 4,
+            CEFR::C1 => 5,
+            CEFR::C2 => 6,
+        }
+    }
+}

@@ -126,4 +126,42 @@ async fn main() {
         .render()
         .unwrap_or("BORKED".into())
     );
+
+    info!("Languages");
+    println!(
+        "{}",
+        latex_template::Languages {
+            columns: 2,
+            colsep: 2.0,
+            languages: vec![
+                latex_template::Language {
+                    language: "Language 1".into(),
+                    cefr_level: latex_template::CEFR::C1,
+                    mothertongue: true,
+                },
+                latex_template::Language {
+                    language: "Language 2".into(),
+                    cefr_level: latex_template::CEFR::C2,
+                    mothertongue: false,
+                },
+                latex_template::Language {
+                    language: "Language 3".into(),
+                    cefr_level: latex_template::CEFR::A1,
+                    mothertongue: false,
+                },
+                latex_template::Language {
+                    language: "Language 4".into(),
+                    cefr_level: latex_template::CEFR::B2,
+                    mothertongue: true,
+                },
+                latex_template::Language {
+                    language: "Language 5".into(),
+                    cefr_level: latex_template::CEFR::C1,
+                    mothertongue: false,
+                },
+            ]
+        }
+        .render()
+        .unwrap_or("BORKED".into())
+    );
 }
