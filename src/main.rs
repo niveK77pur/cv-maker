@@ -64,4 +64,23 @@ async fn main() {
         .render()
         .unwrap_or("BORKED".into())
     );
+
+    info!("Tools");
+    println!(
+        "{}",
+        latex_template::Tools {
+            tools: vec![
+                "Tool 1".into(),
+                "Tool 2".into(),
+                "Tool 3".into(),
+                "Tool 4".into(),
+                "Tool 5".into(),
+                "Tool 6".into(),
+                "Tool 7".into(),
+            ],
+            break_points: vec![3, 5]
+        }
+        .render()
+        .unwrap_or("BORKED".into())
+    );
 }

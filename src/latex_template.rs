@@ -32,3 +32,16 @@ pub struct Study {
     pub from: String,
     pub to: String,
 }
+
+#[derive(Template)]
+#[template(path = "latex/autumn_leaves/tools.tex", syntax = "tex")]
+pub struct Tools {
+    pub tools: Vec<String>,
+    pub break_points: Vec<usize>,
+}
+
+impl Tools {
+    pub fn break_at(&self, entry: &usize) -> bool {
+        return self.break_points.contains(&entry);
+    }
+}
