@@ -19,3 +19,16 @@ pub struct Title<'a> {
     pub picture_path: &'a str,
     pub occupation: &'a str,
 }
+
+#[derive(Template)]
+#[template(path = "latex/autumn_leaves/studies.tex", syntax = "tex")]
+pub struct Studies {
+    pub studies: Vec<Study>,
+}
+
+pub struct Study {
+    pub about: String,
+    pub location: String,
+    pub from: String,
+    pub to: String,
+}

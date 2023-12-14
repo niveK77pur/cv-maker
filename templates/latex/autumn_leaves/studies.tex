@@ -1,0 +1,12 @@
+<<& for study in studies -&>>
+
+<<& let date_range = format!("{}", study.from) -&>>
+<<& if study.from != study.to -&>>
+<<& let date_range = format!("{} -- {}", study.from, study.to) -&>>
+<<& endif -&>>
+
+\noindent%
+{\bfseries <<< study.about >>>}, %
+{\color{accent}\itshape <<< date_range >>> \hfill <<< study.location >>>\par\medskip}
+
+<<&- endfor &>>

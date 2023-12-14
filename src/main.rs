@@ -41,4 +41,27 @@ async fn main() {
         .render()
         .unwrap_or("BORKED".into())
     );
+
+    info!("Studies");
+    println!(
+        "{}",
+        latex_template::Studies {
+            studies: vec![
+                latex_template::Study {
+                    about: "My first study!".into(),
+                    location: "School 1".into(),
+                    from: "2017".into(),
+                    to: "2019".into(),
+                },
+                latex_template::Study {
+                    about: "My second study!".into(),
+                    location: "School 2".into(),
+                    from: "2022".into(),
+                    to: "2022".into(),
+                }
+            ],
+        }
+        .render()
+        .unwrap_or("BORKED".into())
+    );
 }
