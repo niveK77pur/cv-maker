@@ -114,6 +114,7 @@ pub struct MainDocument {
     pub color_secondary: LatexColor,
     pub color_text: LatexColor,
     pub color_anti_text: LatexColor,
+    pub contents: String,
 }
 
 pub struct LatexColor {
