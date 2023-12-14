@@ -15,6 +15,22 @@ async fn main() {
 
     info!("hello, web server!");
 
+    info!("Title");
+    println!(
+        "{}",
+        latex_template::Title {
+            email: "Hello#@test.com",
+            phone: "1234567890",
+            picture_width: 5.0,
+            other: "This is me lol",
+            name: "Tim Musterman",
+            picture_path: "/home/kuni/Pictures/Beethoven_new_songs.png",
+            occupation: "Busy lol"
+        }
+        .render()
+        .unwrap_or("BORKED".into())
+    );
+
     info!("Section");
     println!(
         "{}",
