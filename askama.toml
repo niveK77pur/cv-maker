@@ -1,0 +1,12 @@
+[[syntax]]
+name = "tex"
+block_start = "<<&"
+block_end = "&>>"
+comment_start = "<<#"
+comment_end = "#>>"
+expr_start = "<<<"
+expr_end = ">>>"
+
+[[escaper]]
+path = "askama_escaper::Tex"
+extensions = ["tex"]
