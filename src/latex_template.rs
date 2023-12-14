@@ -103,3 +103,20 @@ impl Language {
         }
     }
 }
+
+#[derive(Template)]
+#[template(path = "latex/autumn_leaves/main_document.tex", syntax = "tex")]
+pub struct MainDocument {
+    pub paper_margin: Option<f64>,
+    pub paper_hmargin: Option<f64>,
+    pub paper_vmargin: Option<f64>,
+    pub color_accent: LatexColor,
+    pub color_secondary: LatexColor,
+    pub color_text: LatexColor,
+    pub color_anti_text: LatexColor,
+}
+
+pub struct LatexColor {
+    pub model: String,
+    pub spec: String,
+}

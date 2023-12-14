@@ -164,4 +164,32 @@ async fn main() {
         .render()
         .unwrap_or("BORKED".into())
     );
+
+    info!("Document");
+    println!(
+        "{}",
+        latex_template::MainDocument {
+            paper_margin: Some(1.7),
+            paper_hmargin: Some(5.2),
+            paper_vmargin: None,
+            color_accent: latex_template::LatexColor {
+                model: "HTML".into(),
+                spec: "FF7D8A".into()
+            },
+            color_secondary: latex_template::LatexColor {
+                model: "HTML".into(),
+                spec: "FF7D8A".into()
+            },
+            color_text: latex_template::LatexColor {
+                model: "HTML".into(),
+                spec: "FF7D8A".into()
+            },
+            color_anti_text: latex_template::LatexColor {
+                model: "HTML".into(),
+                spec: "FF7D8A".into()
+            },
+        }
+        .render()
+        .unwrap_or("BORKED".into())
+    );
 }
