@@ -4,14 +4,29 @@
 % end
 <<& for entry in works -&>>
 
-<<& let title = entry.title() -&>>
-<<& let about = entry.about() -&>>
-<<& let location = entry.location() -&>>
-<<& let tools = entry.tools() -&>>
-<<& let from = entry.from() -&>>
-<<& let to = entry.to() -&>>
+<<& let date_range -&>>
+<<& if entry.from() == entry.to() -&>>
+<<& let date_range = format!("{}", entry.to()) -&>>
+<<& else -&>>
+<<& let date_range = format!("{} -- {}", entry.from(), entry.to()) -&>>
+<<& endif -&>>
 
-<<& include "latex/autumn_leaves/work.tex" &>>
+\noindent%
+{\bfseries <<< entry.title() >>>}, %
+{\color{accent}\itshape <<< date_range >>>}%
+\hfill{\color{accent}\itshape <<< entry.location() >>>}%
+<<& match entry.about() &>>
+<<& when Some with (val) -&>>
+\newline <<< val|trim >>>%
+<<& when None -&>>
+<<& endmatch -&>>
+<<& match entry.tools() &>>
+<<& when Some with (val) -&>>
+\newline Tools: {\color{accent} <<< val >>>}%
+<<& when None -&>>
+<<& endmatch -&>>
+
+\par\medskip
 
 <<&- endfor &>>
 <<#

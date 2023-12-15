@@ -53,8 +53,7 @@ pub struct Works {
     pub works: Vec<Work>,
 }
 
-#[derive(Template, Getters)]
-#[template(path = "latex/autumn_leaves/work.tex", syntax = "tex")]
+#[derive(Getters)]
 #[getset(get)]
 pub struct Work {
     pub title: String,
