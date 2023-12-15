@@ -2,16 +2,19 @@
 \bigskip\medskip%
 \noindent%
 \tikz{
-  \node[inner sep = 0pt] (t) at (0,0) [anchor=west] {%
-    \color{header}\sffamily\bfseries\Large <<< icon >>><<< title|uppercase >>>%
+  \node[secondary, inner sep = 0pt] (t) at (0,0) [anchor=west] {%
+    \sffamily\bfseries\Large <<< icon >>>~<<< title|uppercase >>>%
   };
   \coordinate (e) at (\textwidth,0);
   \draw[
     rounded corners=1.7,
-    white,
+    antiText,
     left color=accent,
-    right color=white,
+    right color=antiText,
   ] ($(t.east)+(0.5,0.06)$) rectangle ($(e)+(0,-0.06)$);
 }%
 \par%
 \medskip
+<<#
+vim: tw=0 cole=0
+#>>

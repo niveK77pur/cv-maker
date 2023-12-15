@@ -33,7 +33,7 @@ async fn main() {
 
     info!("Section");
     let section = latex_template::Section {
-        icon: "🌳",
+        icon: r#"\faGraduationCap"#,
         title: "hello, world!",
     }
     .render()
@@ -158,7 +158,7 @@ async fn main() {
     info!("Document");
     let mut contents = String::new();
     contents.push_str(&title);
-    // contents.push_str(&section);
+    contents.push_str(&section);
     // contents.push_str(&studies);
     let document = latex_template::MainDocument {
         paper_margin: Some(1.7),
