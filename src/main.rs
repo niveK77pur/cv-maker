@@ -41,19 +41,23 @@ async fn main() {
     println!("{}", section);
 
     info!("Studies");
-    let studies = latex_template::Studies {
-        studies: vec![
-            latex_template::Study {
-                about: "My first study".into(),
+    let studies = latex_template::Works {
+        works: vec![
+            latex_template::Work {
+                title: "My first study".into(),
                 location: "School 1".into(),
                 from: "2017".into(),
                 to: "2019".into(),
+                about: None,
+                tools: None,
             },
-            latex_template::Study {
-                about: "My second study".into(),
+            latex_template::Work {
+                title: "My second study".into(),
                 location: "School 2".into(),
                 from: "2022".into(),
                 to: "2022".into(),
+                about: None,
+                tools: None,
             },
         ],
     }

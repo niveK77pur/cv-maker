@@ -22,19 +22,6 @@ pub struct Title<'a> {
 }
 
 #[derive(Template)]
-#[template(path = "latex/autumn_leaves/studies.tex", syntax = "tex")]
-pub struct Studies {
-    pub studies: Vec<Study>,
-}
-
-pub struct Study {
-    pub about: String,
-    pub location: String,
-    pub from: String,
-    pub to: String,
-}
-
-#[derive(Template)]
 #[template(path = "latex/autumn_leaves/tools.tex", syntax = "tex")]
 pub struct Tools {
     pub tools: Vec<String>,
