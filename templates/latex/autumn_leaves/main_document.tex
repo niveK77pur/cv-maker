@@ -37,19 +37,19 @@
 \geometry{
   <<& match paper_margin -&>>
   <<& when Some with (margin) -&>>
-  margin=<<< margin >>>,
+  margin=<<< margin >>>cm,
   <<& when None -&>>
   <<& endmatch -&>>
 
   <<& match paper_hmargin -&>>
   <<& when Some with (hmargin) -&>>
-  hmargin=<<< hmargin >>>,
+  hmargin=<<< hmargin >>>cm,
   <<& when None -&>>
   <<& endmatch -&>>
 
   <<& match paper_vmargin -&>>
   <<& when Some with (vmargin) -&>>
-  vmargin=<<< vmargin >>>,
+  vmargin=<<< vmargin >>>cm,
   <<& when None -&>>
   <<& endmatch -&>>
 }
