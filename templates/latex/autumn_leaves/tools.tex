@@ -3,8 +3,8 @@
     \node[minimum height=1.7em] (n) at (0,0) {<<< name >>>};
     \coordinate (topleft) at ($(n.north west)+(-0.2,0)$);
     \coordinate (bottomright) at ($(n.south east)+(0.2,0)$);
-    \draw[rounded corners=3, fill=header, draw=white] (bottomright) rectangle (topleft);
-    \node at (n) {\color{white} <<< name >>>};
+    \draw[rounded corners=3, fill=secondary, draw=secondary] (bottomright) rectangle (topleft);
+    \node at (n) {\color{antiText} <<< name >>>};
   }\hspace{0.5em}}
 <<& if Self::break_at(self, loop.index) -&>>
 \newline

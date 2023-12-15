@@ -160,6 +160,8 @@ async fn main() {
     contents.push_str(&title);
     contents.push_str(&section);
     contents.push_str(&studies);
+    contents.push_str(&section);
+    contents.push_str(&tools);
     let document = latex_template::MainDocument {
         paper_margin: Some(1.7),
         paper_hmargin: None,
