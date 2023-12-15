@@ -19,10 +19,10 @@ async fn main() {
 
     info!("Title");
     let title = latex_template::Title {
-        email: "Hello#@test.com",
+        email: "Hello@test.com",
         phone: "1234567890",
-        picture_width: 5.0,
-        other: "This is me lol",
+        picture_width: 3.0,
+        other: r#"\faLinkedin\ This is my linkedin \\ \faGithub\ This is my github"#,
         name: "Tim Musterman",
         picture_path: "/home/kuni/Pictures/Beethoven_new_songs.png",
         occupation: "Busy lol",
@@ -158,11 +158,11 @@ async fn main() {
     info!("Document");
     let mut contents = String::new();
     contents.push_str(&title);
-    contents.push_str(&section);
-    contents.push_str(&studies);
+    // contents.push_str(&section);
+    // contents.push_str(&studies);
     let document = latex_template::MainDocument {
         paper_margin: Some(1.7),
-        paper_hmargin: Some(5.2),
+        paper_hmargin: None,
         paper_vmargin: None,
         color_accent: latex_template::LatexColor {
             model: "HTML".into(),
@@ -170,15 +170,15 @@ async fn main() {
         },
         color_secondary: latex_template::LatexColor {
             model: "HTML".into(),
-            spec: "FF7D8A".into(),
+            spec: "5E6579".into(),
         },
         color_text: latex_template::LatexColor {
-            model: "HTML".into(),
-            spec: "FF7D8A".into(),
+            model: "named".into(),
+            spec: "black".into(),
         },
         color_anti_text: latex_template::LatexColor {
-            model: "HTML".into(),
-            spec: "FF7D8A".into(),
+            model: "named".into(),
+            spec: "white".into(),
         },
         contents,
     }

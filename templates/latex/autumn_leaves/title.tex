@@ -15,34 +15,32 @@
   [rounded corners=<<< corner_rounded >>>] -- (left)  -- cycle;
 
   % box upper
-  \fill[header] (0,<<< bottom_height >>>) [rounded corners=<<< corner_rounded >>>]
+  \fill[secondary] (0,<<< bottom_height >>>) [rounded corners=<<< corner_rounded >>>]
   -- (0,<<< total_height >>>)
   -- ($(left)+(0,<<< total_height >>>)$)
   -- ($(left)+(0,<<< bottom_height >>>)$);
 
   % email
-  \node at ($0.33*(left)+(0,<<< bottom_height / 2.0 >>>)$) {%
-    \color{white}{\faEnvelope\ \href{mailto:<<<email>>>}{<<<email>>>}}%
+  \node[antiText] at ($0.33*(left)+(0,<<< bottom_height / 2.0 >>>)$) {%
+    \faEnvelope\ \href{mailto:<<<email>>>}{<<<email>>>}%
   };
 
   % phone
-  \node at ($0.66*(left)+(0,<<< bottom_height >>>)$) {%
-    \color{white}{\faPhone\ <<< phone >>>}%
+  \node[antiText] at ($0.66*(left)+(0,<<< bottom_height / 2.0 >>>)$) {%
+    \faPhone\ <<< phone >>>%
   };
 
   % other
-  \node at ($<<< picture_left_ratio >>>*(left)+(<<< picture_width * 0.6 >>> cm, <<< total_height * 0.55 >>>)$)
-  [right] {
-    \color{white}\adjustbox{raise=-0.5\height}{\begin{tabular}{@{} cl} <<< other >>> \end{tabular}}
-  };
+  \node[antiText, align=left] at ($<<< picture_left_ratio >>>*(left)+(<<< picture_width * 0.6 >>> cm, <<< total_height * 0.55 >>>)$)
+  [right] {<<< other >>>};
 
   % name
-  \node at ($<<< picture_left_ratio >>>*(left)+(<<< picture_width * 0.6 >>> cm, <<< total_height * 1.2 >>>)$)
-  [right] {\color{header}\sffamily\LARGE\bfseries <<< name >>>};
+  \node[secondary] at ($<<< picture_left_ratio >>>*(left)+(<<< picture_width * 0.6 >>> cm, <<< total_height * 1.2 >>>)$)
+  [right] {\sffamily\LARGE\bfseries <<< name >>>};
 
   % picture
   \begin{scope}
-    \draw[fill=header, draw=header] (<<< picture_location >>>)
+    \draw[fill=secondary, draw=secondary] (<<< picture_location >>>)
     circle (<<< picture_width * 0.5 * 1.15 >>> cm);
 
     \draw[fill=accent, draw=accent] (<<< picture_location >>>)
@@ -55,8 +53,10 @@
 
   % occupation
   \node at ($<<< picture_left_ratio >>>*(left)+(<<< picture_width * 0.6 >>> cm, <<< total_height * 0.85 >>>)$)
-  [right] {\color{white} <<< occupation >>>};
+  [right] {\color{antiText} <<< occupation >>>};
 
 }%
 \par%
-\bigskip
+<<#
+vim: tw=0 cole=0
+#>>
