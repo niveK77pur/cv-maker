@@ -1,7 +1,9 @@
 <<& for study in studies -&>>
 
+<<& let date_range -&>>
+<<& if study.from == study.to -&>>
 <<& let date_range = format!("{}", study.from) -&>>
-<<& if study.from != study.to -&>>
+<<& else -&>>
 <<& let date_range = format!("{} -- {}", study.from, study.to) -&>>
 <<& endif -&>>
 

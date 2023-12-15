@@ -44,13 +44,13 @@ async fn main() {
     let studies = latex_template::Studies {
         studies: vec![
             latex_template::Study {
-                about: "My first study!".into(),
+                about: "My first study".into(),
                 location: "School 1".into(),
                 from: "2017".into(),
                 to: "2019".into(),
             },
             latex_template::Study {
-                about: "My second study!".into(),
+                about: "My second study".into(),
                 location: "School 2".into(),
                 from: "2022".into(),
                 to: "2022".into(),
@@ -159,7 +159,7 @@ async fn main() {
     let mut contents = String::new();
     contents.push_str(&title);
     contents.push_str(&section);
-    // contents.push_str(&studies);
+    contents.push_str(&studies);
     let document = latex_template::MainDocument {
         paper_margin: Some(1.7),
         paper_hmargin: None,
