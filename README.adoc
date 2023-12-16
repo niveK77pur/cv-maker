@@ -22,6 +22,7 @@ A personal (for fun) project for generating LaTeX CVs. The goal is to have a com
 *** [ ] The actual data
 ** [ ] Data needs to be serialized from JSON into the corresponding structs
 ** [ ] Data needs to be serialized from the structs into JSON (for saving changes)
+* [ ] Address possibility of injection attacks in LaTeX code
 
 [#frontend]
 === Frontend
