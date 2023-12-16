@@ -1,0 +1,4 @@
+= CV Maker
+:toc:
+
+A personal (for fun) project for generating LaTeX CVs. The goal is to have a complete database with your entire curriculum, where this tool should allow you to cherry-pick the entries you want to include in your CV. The idea is to be able to quickly change the included entries if you need to highlight different aspects for different applications.
