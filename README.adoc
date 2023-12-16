@@ -2,3 +2,46 @@
 :toc:
 
 A personal (for fun) project for generating LaTeX CVs. The goal is to have a complete database with your entire curriculum, where this tool should allow you to cherry-pick the entries you want to include in your CV. The idea is to be able to quickly change the included entries if you need to highlight different aspects for different applications.
+
+[#todo]
+== TODO
+
+[#backend]
+=== Backend
+
+* [ ] Refactor to allow different themes
+** [ ] Create an interface with functions for each template type?
+** [ ] Create a newtype with a `Deref` on which the `Template` can be derived; decouple data from theme
+** [ ] Create a second plain template for testing
+** [ ] Each theme can be a type which implements the interface? Allows for transparent use of an arbitrary theme in the main logic.
+* [ ] Run the lualatex command on the generated file as part of the main Rust program
+* [ ] The actual database should be stored as JSON (YAML? other?)
+** [ ] Higher order type (database) which stores all the data, including
+*** [ ] Section title/name (for user's organisation of data)
+*** [ ] Type of data (Works, Languages, etc) for JSON
+*** [ ] The actual data
+** [ ] Data needs to be serialized from JSON into the corresponding structs
+** [ ] Data needs to be serialized from the structs into JSON (for saving changes)
+
+[#frontend]
+=== Frontend
+
+* [ ] Menu to edit database (all functionality should be accessible from the same view)
+** [ ] View entries/sections
+** [ ] Add entries/sections
+** [ ] Remove entries/sections
+** [ ] Rearrange entries/sections
+** [ ] Edit details of entries/sections
+** [ ] Verify validity of data
+* [ ] A secondary database which holds the final/actual content of the CV
+** [ ] Read and write this secondary database to disk in order to maintain state of the CV's current status
+** [ ] Secondary database could use Rust's immutable references only to the main database's entries to avoid inconsistent data (JSON may not be the right and relevant type for this?)
+** [ ] Ability to add elements (such as sections, and the data entries)footnote:[This should open a sort of selection menu where entries of matching types can be selected for insertion (still grouped according to the database structure). While an entry has been added anywhere, it should be marked as inserted and cannot be used further (to avoid duplicates in the CV).]
+** [ ] Ability to remove elements
+** [ ] Ability to rearrange elements (their order)
+* [ ] Show (preview of) the PDF; or output logs while compiling?
+
+[#tui]
+=== TUI
+
+* [ ] Create a TUI version of the <<frontend>>?
