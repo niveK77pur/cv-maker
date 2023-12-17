@@ -1,7 +1,7 @@
 use std::io::Write;
 
 use askama::Template;
-use cv_maker::latex_template;
+use cv_maker::{latex_template, CVData};
 use tracing::info;
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 
@@ -199,7 +199,10 @@ async fn main() {
     let file_location = "/tmp/mylatexcv.tex";
     match std::fs::File::create(file_location) {
         Ok(mut file) => match file.write_all(document.as_bytes()) {
-            Ok(()) => info!("Contents written to file: {file_location}"),
+            Ok(()) => {
+                info!("Contents written to file: {file_location}");
+                CVData::compile_pdf().await;
+            }
             Err(e) => panic!("Failed to write to file: {e}"),
         },
         Err(e) => panic!("Could not create file: {e}"),
