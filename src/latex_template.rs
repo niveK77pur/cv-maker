@@ -30,7 +30,7 @@ pub struct Tools {
 
 impl Tools {
     pub fn break_at(&self, entry: &usize) -> bool {
-        return self.break_points.contains(&entry);
+        self.break_points.contains(entry)
     }
 }
 
