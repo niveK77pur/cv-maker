@@ -37,10 +37,7 @@ impl CVData {
                 }
                 match child.wait().await {
                     Ok(c) => info!("LuaLaTex Exit Code: {c}"),
-                    Err(e) => error!(
-                        "Failed to spawn lualatex command:
-                {e}"
-                    ),
+                    Err(e) => error!("Failed to spawn lualatex command: {e}"),
                 }
             }
             Err(e) => {
